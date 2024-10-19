@@ -45,4 +45,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // указывание что у пользователя есть задачи
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+        // ->hasMany? будет многаа задач
+    }
 }
