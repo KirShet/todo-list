@@ -10,6 +10,8 @@ class Todo extends Model
     use HasFactory;
 
     protected $quarded = ['id'];
+
+    protected $fillable = ['name'];
     
     //Дайте мне задачу которая пиринадлежить этому конкретному пользователю
     public function user()
