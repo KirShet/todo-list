@@ -22,10 +22,10 @@ new class extends Component {
 
     public function deleteTodo($id)
     {
-        Auth::user()
-        ->todos()
-        ->where('id', $id)
-        ->delete();
+        $todo = Auth::user()->todos()->find($id);
+        $this->authorize('delete', $todo);
+
+        $todo->delete();
     }
     
     public function with()
